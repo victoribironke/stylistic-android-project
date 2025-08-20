@@ -3,6 +3,7 @@ import { selected_item_state, user_details } from "@/lib/atoms";
 import { db } from "@/lib/firebase";
 import { getIcon } from "@/lib/utils";
 import { closetItemStyles } from "@/styles/closet-item";
+import { useNavigation } from "@react-navigation/native";
 import { arrayRemove, doc, updateDoc } from "firebase/firestore";
 import { useAtomValue } from "jotai";
 import { Image, Text, TouchableOpacity, View } from "react-native";
@@ -24,6 +25,7 @@ const ClosetItem = () => {
     imageView,
     itemImage,
   } = closetItemStyles;
+  const { navigate } = useNavigation();
 
   const deleteItem = async () => {
     await updateDoc(doc(db, "users", uid), {
@@ -39,6 +41,9 @@ const ClosetItem = () => {
         waist,
       }),
     });
+
+    navigate("Home Screen" as never);
+    console.log("deleted");
   };
 
   return (
