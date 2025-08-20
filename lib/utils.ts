@@ -1,5 +1,20 @@
 import { ItemProps } from "./types";
 
+export const months = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
+
 export const splitArr = (arr: ItemProps[]) => {
   const shirtsArr: ItemProps[] = [];
   const layersArr: ItemProps[] = [];
@@ -26,21 +41,6 @@ export const randomString = () => {
 };
 
 export const formatDate = (day: any, month: any, year: any) => {
-  const months = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
-  ];
-
   let newDay = "";
   let newMonth = "";
 

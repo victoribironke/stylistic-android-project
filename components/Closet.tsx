@@ -1,5 +1,4 @@
 import { user_details } from "@/lib/atoms";
-import { clothingData } from "@/lib/data";
 import { ItemProps } from "@/lib/types";
 import { homeStyles } from "@/styles/home";
 import { AntDesign } from "@expo/vector-icons";
@@ -22,8 +21,6 @@ const Closet = () => {
 
   const { closetItems } = useAtomValue(user_details);
 
-  const fullClosetItems = [...closetItems, ...clothingData];
-
   return (
     <View style={closetContainer}>
       <View style={closetView}>
@@ -44,10 +41,10 @@ const Closet = () => {
         </TouchableOpacity>
       </View>
 
-      {fullClosetItems.length === 0 ? (
+      {closetItems.length === 0 ? (
         <NoItems />
       ) : (
-        <Items data={fullClosetItems as ItemProps[]} />
+        <Items data={closetItems as ItemProps[]} />
       )}
     </View>
   );

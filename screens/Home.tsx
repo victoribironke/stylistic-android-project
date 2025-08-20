@@ -2,6 +2,7 @@ import Closet from "@/components/Closet";
 import Credits from "@/components/Credits";
 import HomeHeader from "@/components/HomeHeader";
 import { user_details } from "@/lib/atoms";
+import { clothingData } from "@/lib/data";
 import { auth, db } from "@/lib/firebase";
 import { homeStyles } from "@/styles/home";
 import { doc, onSnapshot } from "firebase/firestore";
@@ -26,7 +27,7 @@ const Home = () => {
           imageURL: data!.imageURL,
           name: data!.name,
           credits: data!.credits,
-          closetItems: data!.closetItems,
+          closetItems: [...data!.closetItems, ...clothingData] as any,
           createdAt: data!.createdAt,
         });
       }

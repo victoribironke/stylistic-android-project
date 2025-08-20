@@ -28,7 +28,8 @@
     "extra": {
       "eas": {
         "projectId": "4a139d61-cb08-4265-a5a7-e996b7530869"
-      }
+      },
+      "openrouterApiKey": ""
     }
   }
 }

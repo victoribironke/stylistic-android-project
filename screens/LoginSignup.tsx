@@ -1,6 +1,7 @@
 import Login from "@/components/Login";
 import Signup from "@/components/Signup";
 import { user_details } from "@/lib/atoms";
+import { clothingData } from "@/lib/data";
 import { useNavigation } from "@react-navigation/native";
 import { onAuthStateChanged } from "firebase/auth";
 import { doc, onSnapshot } from "firebase/firestore";
@@ -29,7 +30,7 @@ const LoginSignup = () => {
             imageURL: data!.imageURL,
             name: data!.name,
             credits: data!.credits,
-            closetItems: data!.closetItems,
+            closetItems: [...data!.closetItems, ...clothingData] as any,
             createdAt: data!.createdAt,
           });
 
