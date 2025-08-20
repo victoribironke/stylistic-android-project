@@ -32,7 +32,7 @@ const Suggestions = () => {
   const [loading, setLoading] = useState(false);
   const [suggested, setSuggested] = useState<ItemProps[] | null>(null);
 
-  const GOOGLE_API_KEY = "AIzaSyAS8UGmS14xTFzU7AeOHgvbDsfNQi1V3Rw";
+  const GOOGLE_API_KEY = "AIzaSyCZPcpNzMB0Aqj4EUlP5eLLHPN6lEj3z1s";
 
   const genAI = new GoogleGenerativeAI(GOOGLE_API_KEY);
   const llm = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
